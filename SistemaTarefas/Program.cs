@@ -23,7 +23,9 @@ namespace SistemaTarefas
                 .AddDbContext<SistemaTarefasDBContext>(
                     options => options.UseSqlServer(builder.Configuration.GetConnectionString("Database"))
                 );
+
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>();
 
             var app = builder.Build();
 
